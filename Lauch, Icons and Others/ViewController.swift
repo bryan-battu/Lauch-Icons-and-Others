@@ -42,6 +42,21 @@ class ViewController: UIViewController {
         print(imageV.frame)
         print(imageV.frame.size)
         print(imageV.frame.minX)
+        
+        // Position de la View par rapport à la supervue
+        print(imageV.frame)
+        // Position de la View par rapport à elle-même
+        print(imageV.bounds)
+        let label = UILabel(frame: newView.bounds)
+        label.text = "Salut"
+        newView.addSubview(label)
+        
+        view.subviews.forEach { (v) in
+            print(v)
+            v.subviews.forEach { (subview) in
+                print("Dans v:\(subview)")
+            }
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
